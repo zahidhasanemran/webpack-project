@@ -1,0 +1,32 @@
+Workflow:
+-> Entry Point: App.js
+-> Js and Css Loader
+-> Plugins
+-> Build file 
+
+Objectives:
+-> Next Gen Js to Supportive Js 
+-> Handle JSX
+-> CSS Autoprefixing
+-> Support Image import
+-> Optimize Code
+
+
+
+Steps
+1. git init
+2. npm init
+3. npm install --save-dev webpack webpack-dev-server 
+// webpack is a build tools
+// webpack-dev-server is a server to run and test project locally 
+// dev means devDependencies 
+4. Create Folder Structure 
+// src/index.html->div with id root 
+// src/assests/
+// src/component
+// src/container
+// src/index.js import index.css file 
+// src/index.css for global styling 
+// src/App.js for root component
+
+
