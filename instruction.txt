@@ -28,5 +28,7 @@ Steps
 // src/index.js import index.css file 
 // src/index.css for global styling 
 // src/App.js for root component
+5. Create a dummy react  workflow some component to show 
+6. npm install --save react react-dom react-router-dom
 
 
