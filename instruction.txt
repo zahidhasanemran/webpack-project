@@ -30,5 +30,6 @@ Steps
 // src/App.js for root component
 5. Create a dummy react  workflow some component to show 
 6. npm install --save react react-dom react-router-dom
+7. add start command in package.json and add webpack.config.js and edit it. 
 
 
