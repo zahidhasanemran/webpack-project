@@ -31,5 +31,84 @@ Steps
 5. Create a dummy react  workflow some component to show 
 6. npm install --save react react-dom react-router-dom
 7. add start command in package.json and add webpack.config.js and edit it. 
+8. add file rules for js css image 
+// resolve {extensions: ['.js', '.jsx']} for import file without .js or .jsx extension 
+9. npm install --sav-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader postcss-loader autoprefixer url-loader file-loader
+10. const autoprefixer = require('autoprefixer')
+// babel-loader understand imports
+// babel-core do the things
+// css-loader understand imports
+// style-loader that extracted css code 
+// postcss-loader it run before css-loader dive into css files and adjust code before css-loader pules it out and adjust class name. it can be used to handle scss
+// autoprefixer that add autoprefix to css 
+// url-loader it take image and if they are bellow a certain limit we defined it will convert theme into data 64 url which it can inline into our document so we don't have to download extra file taht efficient. but files above the limit will simply be copied to ur outlput folder the it will generate a link to these files and put that into our import 
+
+
+/*
+
+module: [
+        {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclueds: '/node_modules/'
+
+        },
+        {
+            test: /\.css$/,
+            exclueds: '/node_modules/',
+            use: [
+                {loader: 'style-loader'},
+                {loader: 'css-loader', options: {
+                    importLoader: 1,
+                    modules: true,
+                    localIdentName: '[name]__[local]__[hash:base64:5]'
+                }}, // webpack read/parses loader in use array from right to left bottom to top
+                {
+                    loader: "postcss-loader",
+                    options: {
+                        ident: 'postcss',
+                        plugins: () => [
+                            autoprefixer({
+                                "browsers": [
+                                    "> 1%",
+                                    "last 2 versions"
+                                ]
+                            })
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.(png|jpe?g|gif|svg)$/,
+            loader: 'url-loader?limit=8000&name=images/[name].[ext]',
+        }
+    ]
+
+
+*/ 
+
+
+10. configure .babelrc file 
+/*
+
+{
+    "presets": [
+        ["env", {
+            "targets": {
+                "browsers": [
+                    "> 1%",
+                    "last 2 versions"
+                ]
+            }
+        }],
+        "react"
+    ]
+}
+
+
+
+*/
+11. 
 
 
