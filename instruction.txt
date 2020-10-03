@@ -33,7 +33,7 @@ Steps
 7. add start command in package.json and add webpack.config.js and edit it. 
 8. add file rules for js css image 
 // resolve {extensions: ['.js', '.jsx']} for import file without .js or .jsx extension 
-9. npm install --sav-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader postcss-loader autoprefixer url-loader file-loader
+9. npm install --sav-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader postcss-loader autoprefixer url-loader file-loader babel-loader@7
 10. const autoprefixer = require('autoprefixer')
 // babel-loader understand imports
 // babel-core do the things
@@ -46,16 +46,17 @@ Steps
 
 /*
 
-module: [
+module: {
+    rules: [
         {
             test: /\.js$/,
             loader: 'babel-loader',
-            exclueds: '/node_modules/'
+            exclude: '/node_modules/'
 
         },
         {
             test: /\.css$/,
-            exclueds: '/node_modules/',
+            exclude: '/node_modules/',
             use: [
                 {loader: 'style-loader'},
                 {loader: 'css-loader', options: {
@@ -84,7 +85,7 @@ module: [
             loader: 'url-loader?limit=8000&name=images/[name].[ext]',
         }
     ]
-
+}
 
 */ 
 
@@ -109,6 +110,6 @@ module: [
 
 
 */
-11. 
+11. install lazyloading 
 
 
